@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Hotspot</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  user-select:none;
+  font-family:'Segoe UI', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:radial-gradient(circle at top, #ff1a1a, #060000 70%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+.container{
+  text-align:center;
+}
+
+img{
+  width:260px;
+  aspect-ratio:1/1;
+  border-radius:16px;
+  box-shadow:0 0 30px #ff0000;
+  pointer-events:none;
+}
+
+.text{
+  margin-top:15px;
+  color:#ffb3b3;
+}
+</style>
+</head>
+
+<body oncontextmenu="return false">
+
+<div class="container">
+  <img src="photo.jpg" draggable="false">
+  <div class="text">
+    <!-- ISI SENDIRI TEKS DI SINI -->
+    Wow kok lu bisa tau?
+  </div>
+</div>
+
+<script>
+// Cegah akses langsung
+if(sessionStorage.getItem("login") !== "true"){
+  window.location.href = "index.html";
+}
+
+// Disable copy
+document.addEventListener("copy", e => e.preventDefault());
+</script>
+
+</body>
+</html>
